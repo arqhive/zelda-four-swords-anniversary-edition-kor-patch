@@ -71,8 +71,48 @@
     설치하면 "An error has occurred" 가 뜨며 실행되지 않습니다.
     TWiLight Menu++(nds-bootstrap) 또는 Unlaunch 환경에서 실행하세요.
   - melonDS 에뮬레이터에서는 롬을 직접 열거나 TWiLight Menu++로 실행하면
-    흰 화면에서 멈춥니다. Unlaunch를 설치한 DSi NAND에 타이틀을 설치한 뒤
-    Unlaunch 메뉴에서 실행하면 동작합니다.
+    흰 화면에서 멈춥니다. 아래 [melonDS] 방법을 따라 주세요.
+
+[melonDS 에뮬레이터 (Unlaunch 경유, 확인 완료)]
+  준비물
+    - melonDS 1.x
+    - 본인 DSi에서 덤프한 파일: DSi ARM9/ARM7 BIOS, DSi 펌웨어,
+      DSi NAND(no$gba 푸터 포함). 북미(USA) 본체 NAND 권장
+    - 원본 게임 덤프에 들어 있는 TMD 파일(tmd.0 등)
+    - Unlaunch 설치 파일 UNLAUNCH.DSI (https://problemkaputt.de/unlaunch.htm)
+    - TWiLight Menu++ DSi용 (Unlaunch 설치에만 사용)
+
+  1) 기본 설정
+     - Config > Emu settings > General: Console type = DSi
+     - DSi 탭: BIOS9, BIOS7, Firmware, NAND 경로 지정
+     - DSi 탭: "Full BIOS Boot" 는 반드시 끄기 (켜면 흰 화면)
+     - NAND 파일은 미리 백업해 두세요.
+
+  2) Unlaunch 설치 (최초 1회)
+     - Config > Emu settings > DSi SD card: SD 카드 사용 + 폴더 동기화(Folder sync)로
+       TWiLight Menu++ 파일과 UNLAUNCH.DSI 를 넣은 폴더 지정
+     - General: "Boot game directly" 켜기
+     - File > Open ROM 으로 SD 폴더의 BOOT.NDS(TWiLight Menu++) 실행
+       (UNLAUNCH.DSI 를 직접 열면 흰 화면이 됩니다)
+     - TWiLight Menu++ 파일 목록에서 UNLAUNCH.DSI 실행 > "Install now"
+     - 설치가 끝나면 System > Stop
+
+  3) 패치된 게임 설치
+     - 에뮬레이션이 멈춘 상태에서 System > Manage DSi titles
+       (실행 중에는 메뉴가 비활성화됩니다)
+     - 같은 게임이 이미 있으면 삭제한 뒤 Import
+     - 실행 파일: 패치된 .nds / TMD: 원본 덤프의 tmd 파일
+
+  4) 실행
+     - File > Boot firmware 를 누르고, 부팅되는 동안 A+B 버튼을 누르고 있기
+     - Unlaunch 메뉴가 뜨면 "Zelda: Four Swords" 선택
+     - 게임 언어는 DSi 본체(NAND) 언어 설정을 따릅니다. English 로 설정하세요.
+
+  melonDS 에서 안 되는 경우
+     - 흰 화면: 롬 직접 열기 / TWiLight Menu++ 에서 게임 실행 / Unlaunch 의 Launcher 항목 /
+       Full BIOS Boot 켬  → 모두 이 게임이 동작하지 않는 경로입니다.
+     - "An error has occurred": Unlaunch 를 거치지 않고 순정 DSi 메뉴에서 실행한 경우입니다
+       (패치로 헤더 서명이 달라져 순정 메뉴는 실행을 거부합니다).
 
 
 ■ 알려진 문제 / 미번역 부분

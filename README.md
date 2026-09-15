@@ -30,6 +30,10 @@
 
 실행은 TWiLight Menu++(게임 언어 English) 또는 Unlaunch 환경에서 해야 합니다. 자세한 내용은 사용자용 설명서를 보세요.
 
+- **3DS / DSi 실기**: TWiLight Menu++ 에서 실행
+- **melonDS**: DSi 모드(Full BIOS Boot 끔) + 에뮬 NAND에 Unlaunch 설치 → Manage DSi titles 로 패치된 롬과 TMD를 Import → Boot firmware 중 A+B → Unlaunch 메뉴에서 실행.
+  롬을 직접 열거나 TWiLight Menu++로 실행하면 흰 화면이 됩니다. 단계별 방법은 [사용자 설명서](release/README_한국어.txt)에 있습니다.
+
 ## 개발자용: 직접 빌드
 
 ### 요구 사항
