@@ -1,0 +1,24 @@
+# Game data must never be committed
+*.nds
+*.app
+*.srl
+*.dsi
+00000000
+tmd.*
+*.sav
+*.pub
+*.prv
+
+# Local work output (ROM builds, extracted game data, screenshots)
+work/
+out/
+screens/
+extract/
+
+# Extracted original script (contains copyrighted game text)
+translation/script.json
+translation/*.xlsx
+
+# Python
+__pycache__/
+*.pyc
