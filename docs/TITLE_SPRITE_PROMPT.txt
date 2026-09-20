@@ -1,0 +1,5 @@
+Built-in image_gen; background-extraction of the existing Korean title image.
+Input SHA256: 3a2dd3573c5e23b04b7cbedf548e9e8af6958410dd38755d121bebedab86c5e4
+Output SHA256: caa4d2bd936b3b9437e0db5b7725b034caf632e33ab2e725d504432d6dd20436
+
+Use case: background-extraction. Input image is the edit target: the already approved Korean game title screen. Extract ONLY its complete title-logo artwork onto a genuinely transparent alpha background, retaining the exact same 4:3 canvas, pixel positions, scale, shape, typography and colors. Preserve the four silver swords, green gold-edged Korean title "젤다의 전설", blue white subtitle "4개의 검", "25주년 에디션", and four colored jewels. Remove ALL forest/background scenery, the yellow ring below jewels, and the bottom Nintendo/GREZZO copyright credits; these become fully transparent. Background visible through holes and between letters/swords must also be transparent. Do not redraw, redesign, add or move anything. No opaque background, no checkerboard baked in, no glow. This is an alpha sprite cutout of the reference title, not a new logo. Preserve identical overall canvas framing for overlay registration.

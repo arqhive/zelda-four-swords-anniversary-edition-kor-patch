@@ -1,8 +1,10 @@
-"""Compile the Korean title artwork into the original indexed DS texture.
+"""Compile the Korean title into both background and runtime OBJ graphics.
 
 Uses the existing 256-color palette, all palette animation data, tilemap,
 texture size and archive offsets. Outside the title region, original texture
 indices are copied byte-for-byte (including the jewels and credits).
+The runtime title also uses localized zeldat entries 12/13, with pat.bin group
+181 and zeldat.bin palette 62. Updating the background alone is insufficient.
 The input artwork is created with ImageGen; this performs native asset encoding.
 """
 from pathlib import Path
@@ -14,6 +16,7 @@ import sys
 from PIL import Image
 
 from polish_graphics import Rom, lz, comparison, build_checkpoint, GFX_NAMES
+from title_sprites import compile_sprite_logo, render_title_sprite
 
 TITLE_ENTRY = 12
 PALETTE_ENTRY = 13
@@ -48,6 +51,8 @@ def main():
     ap.add_argument('--base', type=Path, required=True)
     ap.add_argument('--original', type=Path, required=True)
     ap.add_argument('--artwork', type=Path, required=True)
+    ap.add_argument('--sprite-artwork', type=Path, required=True,
+                    help='Transparent RGBA cutout of the Korean title logo')
     ap.add_argument('--out', type=Path, required=True)
     args=ap.parse_args();args.out.mkdir(parents=True,exist_ok=True)
     base=Rom(args.base)
@@ -87,13 +92,16 @@ def main():
     assert lz.decompress(blob)==bytes(data)
     resources={name:base.read(name) for name in GFX_NAMES}
     resources['subtask.cmp']=blob
-    details={'stage':'04_title_logo','title':['젤다의 전설','4개의 검','25주년 에디션'],
+    sprite_before=render_title_sprite(base)
+    resources['zeldat_us_en.bin'], sprite_details=compile_sprite_logo(base,args.sprite_artwork)
+    details={'stage':'title_logo_background_and_sprites','title':['젤다의 전설','4개의 검','25주년 에디션'],
              'image_generation':'built-in image_gen; prompt in imagegen_prompt.txt',
              'artwork_sha256':hashlib.sha256(args.artwork.read_bytes()).hexdigest(),
              'region':TITLE_REGION,'original_palette_preserved':True,
-             'all_other_archive_entries_preserved':True,
+             'subtask_other_archive_entries_preserved':True,
              'jewels_and_credits_preserved':True,
-             'runtime_test':'Not run; user will verify in emulator later.'}
+             'runtime_test':'Not run; pending user hardware verification.'}
+    details.update(sprite_details)
     build_checkpoint(args.base,args.original,resources,args.out,details)
     # Render from the newly built ROM, not from the high-resolution proposal.
     checked=Rom(args.out/'KQ9E_ko.nds')
@@ -104,9 +112,15 @@ def main():
     after=texture_image(checked_raw,palette)
     before.save(args.out/'title_before_256.png')
     after.save(args.out/'title_after_256.png')
-    comparison([('게임 제목 로고 · 256×192 원본 그래픽의 2배 확대',before,after)],
-               args.out/'before_after.png','04 · 게임 타이틀 로고 한글화',scale=2,
-               note='완성 롬에서 다시 추출 · 기존 팔레트 사용 · 실제 에뮬레이터 화면은 아님')
+    sprite_after=render_title_sprite(checked)
+    assert sprite_after.tobytes()==render_title_sprite(checked,13).tobytes()
+    sprite_before.save(args.out/'sprite_before_256.png')
+    sprite_after.save(args.out/'sprite_after_256.png')
+    def preview(im):
+        return Image.alpha_composite(Image.new('RGBA',im.size,(70,75,83,255)),im).convert('RGB')
+    comparison([('실제 표시용 로고 · 제목과 부제 조각을 원래 배열로 조립',preview(sprite_before),preview(sprite_after))],
+               args.out/'before_after.png','타이틀 로고 누락 수정 · 영문 → 한글',scale=2,
+               note='완성 롬의 스프라이트 재추출 · 단색 배경은 비교용 · 실기 실행 화면은 아님')
 
 
 if __name__=='__main__':main()
