@@ -1,10 +1,10 @@
 ==============================================================
- 젤다의 전설 4개의 검 25주년 에디션 (북미판 DSiWare) 한글 패치 v1.0
+ 젤다의 전설 4개의 검 25주년 에디션 (북미판 DSiWare) 한글 패치 v1.0.1
  The Legend of Zelda: Four Swords Anniversary Edition - Korean Patch
 ==============================================================
 
 제작: arqhive
-배포 파일: Zelda_4Swords_AE_KQ9E_Korean_v1.0.bps
+배포 파일: Zelda_4Swords_AE_KQ9E_Korean_v1.0.1.bps
 
 
 ■ 소개
@@ -42,7 +42,7 @@
 [Rom Patcher JS]
   1. 사이트 접속
   2. "ROM file"에 원본 파일 선택
-  3. "Patch file"에 Zelda_4Swords_AE_KQ9E_Korean_v1.0.bps 선택
+  3. "Patch file"에 Zelda_4Swords_AE_KQ9E_Korean_v1.0.1.bps 선택
   4. "Apply patch" 클릭 → 패치된 파일 저장
 
 [Floating IPS]
@@ -51,9 +51,9 @@
 
 적용 후 파일 확인값:
    - 크기 : 14,496,768 바이트
-   - CRC32: 8A43970A
-   - MD5  : 493f8ed1c6af1395975f4c9bf9107a8a
-   - SHA1 : 6a381deaec18e6e75e22ea2c0b507df529aa6cd8
+   - CRC32: 3BFED5DE
+   - MD5  : 0c78983fc07a02986966f90dd2b153d2
+   - SHA1 : 263dbdb9f979d30873a9a085a70620665f4d8bef
 
 확장자가 .app 이라면 .nds 로 바꿔 사용하세요.
 
@@ -130,7 +130,8 @@
 
 ■ 버전 기록
 --------------------------------------------------------------
-v1.0  최초 배포
+v1.0.1  번역 검수본 반영 (129개 항목 문장 다듬기)
+v1.0    최초 배포
 
 
 ■ 라이선스

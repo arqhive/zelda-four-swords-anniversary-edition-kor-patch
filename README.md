@@ -15,7 +15,7 @@
 
 ## 사용자용: 패치 적용
 
-[`release/`](release/) 폴더의 `.bps` 패치와 [`README_한국어.txt`](release/README_한국어.txt)를 참고하세요.
+[`release/`](release/) 폴더의 `.bps` 패치(현재 v1.0.1)와 [`README_한국어.txt`](release/README_한국어.txt)를 참고하세요.
 
 | 원본 (북미판 DSiWare, 복호화) | 값 |
 |---|---|
@@ -25,8 +25,8 @@
 
 | 패치 적용 결과 | 값 |
 |---|---|
-| CRC32 | `8A43970A` |
-| SHA1 | `6a381deaec18e6e75e22ea2c0b507df529aa6cd8` |
+| CRC32 | `3BFED5DE` |
+| SHA1 | `263dbdb9f979d30873a9a085a70620665f4d8bef` |
 
 실행은 TWiLight Menu++(게임 언어 English) 또는 Unlaunch 환경에서 해야 합니다. 자세한 내용은 사용자용 설명서를 보세요.
 
