@@ -22,7 +22,7 @@ import fix_digest
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KO = os.path.join(REPO, "translation", "ko.json")
 GFX_PATCHES = os.path.join(REPO, "patches", "gfx")
-GFX_FILES = ("subtask_us_en.cmp", "zeldat_us_en.bin")
+GFX_FILES = ("subtask_us_en.cmp", "zeldat_us_en.bin", "subtask.cmp")
 EN = 1
 GULIM = os.environ.get("GULIM_TTC", "C:/Windows/Fonts/gulim.ttc")
 

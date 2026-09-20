@@ -8,14 +8,17 @@
 - 대사·안내문·시스템 메시지 한글화 (215 / 220 항목, 스태프 롤 제외)
 - 한글 글리프가 추가된 폰트
 - 주요 메뉴·타이틀·스테이지 이름판 그래픽 한글화
-- 실기 확인: 한국판 3DS(CFW) + TWiLight Menu++
+- 이전 버전 실기 확인: 한국판 3DS(CFW) + TWiLight Menu++
+- v1.1 그래픽 수정본: 사용자 에뮬레이터 실행 확인 완료
 
 > 이 저장소에는 **게임 데이터(롬, 추출한 원문 대사, 그래픽, 스크린샷)가 들어 있지 않습니다.**
 > 패치를 만들거나 적용하려면 본인이 소유한 게임에서 직접 덤프한 원본이 필요합니다.
 
 ## 사용자용: 패치 적용
 
-[`release/`](release/) 폴더의 `.bps` 패치(현재 v1.0.1)와 [`README_한국어.txt`](release/README_한국어.txt)를 참고하세요.
+현재 버전은 **v1.1**입니다. [GitHub Release](https://github.com/arqhive/zelda-four-swords-anniversary-edition-kor-patch/releases/tag/v1.1)의 ZIP(패치 + 설명서) 또는 [`release/`의 BPS](release/Zelda_4Swords_AE_KQ9E_Korean_v1.1.bps)를 사용하세요. 적용 방법은 [`README_한국어.txt`](release/README_한국어.txt)를 참고하세요.
+
+v1.1은 게임 제목 로고, 파일 복사·삭제 안내, 공통 버튼·대기 표시·색 선택 변형, 멀티플레이 메뉴를 한글화하고 수련장 지도 이름판의 영문 잔여 픽셀을 제거했습니다. 대사와 폰트는 v1.0.1 그대로입니다. **이전 한글 패치본이 아닌 북미판 원본에 적용하는 누적 패치**입니다.
 
 | 원본 (북미판 DSiWare, 복호화) | 값 |
 |---|---|
@@ -25,8 +28,8 @@
 
 | 패치 적용 결과 | 값 |
 |---|---|
-| CRC32 | `3BFED5DE` |
-| SHA1 | `263dbdb9f979d30873a9a085a70620665f4d8bef` |
+| CRC32 | `35B6673B` |
+| SHA1 | `cb6fd42ca284e958d53c48640aa8bc087635ba2a` |
 
 실행은 TWiLight Menu++(게임 언어 English) 또는 Unlaunch 환경에서 해야 합니다. 자세한 내용은 사용자용 설명서를 보세요.
 
@@ -51,9 +54,11 @@ python tools/bps.py create path/to/00000000 work/KQ9E_ko.nds work/patch.bps
 `build_ko.py`는 다음을 수행합니다.
 1. `translation/ko.json`의 한국어 대사를 `us.kmsg` 영어 칸에 넣기
 2. 필요한 한글 글리프를 `font_ltn.nftr`에 추가
-3. `patches/gfx/*.bps`로 그래픽 파일(`subtask_us_en.cmp`, `zeldat_us_en.bin`) 교체
+3. `patches/gfx/*.bps`로 메뉴·이름판·로고 그래픽 파일(`subtask_us_en.cmp`, `zeldat_us_en.bin`, `subtask.cmp`) 교체
 4. 사용하지 않는 `all.kmsg`를 비워 공간 확보, 파일 재배치
 5. DSi 다이제스트(해시 테이블) 재계산
+
+위 결과 해시는 배포 BPS를 적용한 롬 기준입니다. 소스 빌드는 파일 재배치·빈 공간의 이전 데이터 및 폰트 환경에 따라 전체 롬 해시가 달라질 수 있습니다. v1.1에서는 소스 빌드와 배포본의 모든 NitroFS 파일 내용이 같은지 별도로 검증했습니다. 로고 원본 이미지를 별도로 준비하거나 ImageGen을 실행할 필요는 없습니다.
 
 ### 번역 작업
 ```bash
@@ -80,9 +85,11 @@ docs/             기술 문서
 
 ## 알려진 문제
 
-- 색 선택 화면의 빨간 판 "Select Color", OK·Back 버튼은 영문
+- `PRESS A`, `YOU` 그래픽은 영문으로 유지
 - 스태프 롤, 게임 내 도움말 페이지는 원문
-- 시작의 사당 외 스테이지 이름판은 게임 화면 없이 추정 제작
+- 시작의 사당 외 스테이지 이름판은 원래 게임 화면 없이 추정 제작되었으며, 모든 해금 상태·멀티플레이 화면에 대한 전수 검증은 하지 않음
+
+변경 범위와 검증 내역은 [v1.1 릴리즈 노트](docs/RELEASE_v1.1.md)를 참고하세요.
 
 ## 라이선스
 
