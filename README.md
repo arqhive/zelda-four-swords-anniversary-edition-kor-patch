@@ -1,4 +1,4 @@
-# 젤다의 전설 4개의 검 25주년 에디션 (NDS) 한글 패치
+# 젤다의 전설 4개의 검 25주년 에디션 (DSi) 한글 패치
 
 *The Legend of Zelda: Four Swords Anniversary Edition* (DSiWare, 북미판 `KQ9E`) 비공식 한국어 팬 패치입니다.
 대사는 일본어판 원문을 기준으로 번역했습니다.
