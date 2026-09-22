@@ -15,7 +15,7 @@
 | `font_ltn.nftr` | 대사 폰트, 1bpp 10×12 셀 |
 | `subtask.cmp` | LZ11 압축 공용 그래픽. NCGR 12 = 256×192 8bpp 타이틀, NCLR 13 = 팔레트, NSCR 14 = 타일맵 |
 | `subtask_us_en.cmp` | LZ11 압축, NCGR 5개 + NSCR (하단 화면 UI, 스테이지 이름 바) |
-| `zeldat_us_en.bin` | `(offset, size \| 0x80000000=LZ11)` 테이블, 항목 2~9 = 스테이지 지도 이름판, 7 = CHOOSE A STAGE |
+| `zeldat_us_en.bin` | `(offset, size \| 0x80000000=LZ11)` 테이블, 항목 2–9 = 스테이지 지도 이름판, 7 = CHOOSE A STAGE |
 | `m2dres_narc.blz`, `manpages_narc_us.blz` | BLZ(역방향 LZ) 압축 NARC |
 
 ## KMSG 형식
@@ -50,7 +50,7 @@
   - 이웃 번호로 단색 타일을 **추측하면** 모양만 같은 다른 타일을 고르게 됨.
   - 같은 그림이 두 파일에 중복 존재(지도 이름판 = `zeldat_us_en` 항목 2, 하단 바 = `subtask_us_en` NCGR 3).
   - 판 배경은 세로 그라데이션 → 글자 틈의 원본 세로줄 패턴으로 지워야 줄무늬가 안 생김.
-- 하단 바 스테이지 이름은 NCGR 3에 온전한 그림으로 있고, 지도 이름판(항목 2~9)은 같은 타일 배치를 공유.
+- 하단 바 스테이지 이름은 NCGR 3에 온전한 그림으로 있고, 지도 이름판(항목 2–9)은 같은 타일 배치를 공유.
 
 ### v1.1 그래픽 보완
 
@@ -59,7 +59,7 @@
 - 배경 복원은 글자가 없는 **열 전체 패턴**의 최빈값을 사용한다. 텍스트가 밀집한 행에서는 행별 최빈값이 글자색이 될 수 있다.
 - `tools/dev/build_title_logo.py`: ImageGen으로 만든 한글 로고 이미지를 256×192로 변환하여 기존 256색 팔레트에 맞춘 뒤 타이틀 NCGR에 삽입한다. 편집 영역은 `(28,14)`부터 `(227,132)` 직전까지다. 해당 영역 밖의 픽셀 인덱스, 하단 보석·저작권 표시, 팔레트 데이터 전체, 타일맵, 다른 내부 항목을 보존한다.
 - 로고 제작 프롬프트는 [`TITLE_LOGO_PROMPT.txt`](TITLE_LOGO_PROMPT.txt), 제작 이미지 SHA256은 `3a2dd3573c5e23b04b7cbedf548e9e8af6958410dd38755d121bebedab86c5e4`이다. 제작 이미지는 게임 그래픽을 포함하므로 저장소에 넣지 않는다.
-- v1.1 실기 확인에서 위 공용 배경 변경만으로 큰 로고가 한글화되지 않는 문제가 드러났다. 실제 표시용 데이터는 `zeldat_us_en.bin` 12·13번 항목에도 있다. 현재 `build_title_logo.py`는 필수 `--sprite-artwork`와 `title_sprites.py`를 통해 두 항목의 타일 0~447도 함께 교체한다. `pat.bin` 그룹 181의 프레임 0·1을 사용하며, 8bpp 1D 객체 배열과 인덱스 0 투명도를 지킨다. `zeldat.bin` 62번 항목의 첫 팔레트를 사용하고 효과 타일은 보존한다. 일반 빌드는 `subtask.cmp.bps`와 `zeldat_us_en.bin.bps` 양쪽 수정이 필요하다. [상세와 검증 범위](TITLE_LOGO_FIX.md).
+- v1.1 실기 확인에서 위 공용 배경 변경만으로 큰 로고가 한글화되지 않는 문제가 드러났다. 실제 표시용 데이터는 `zeldat_us_en.bin` 12·13번 항목에도 있다. 현재 `build_title_logo.py`는 필수 `--sprite-artwork`와 `title_sprites.py`를 통해 두 항목의 타일 0–447도 함께 교체한다. `pat.bin` 그룹 181의 프레임 0·1을 사용하며, 8bpp 1D 객체 배열과 인덱스 0 투명도를 지킨다. `zeldat.bin` 62번 항목의 첫 팔레트를 사용하고 효과 타일은 보존한다. 일반 빌드는 `subtask.cmp.bps`와 `zeldat_us_en.bin.bps` 양쪽 수정이 필요하다. [상세와 검증 범위](TITLE_LOGO_FIX.md).
 - v1.1 배포본은 사용자가 에뮬레이터에서 확인한 단계별 수정 롬을 그대로 패치로 배포한다. 소스 일괄 빌드는 전체 NitroFS 파일 내용이 같더라도 파일 배치와 빈 공간에 남은 데이터가 달라 전체 롬 해시는 다를 수 있다.
 
 ## 테스트 환경
