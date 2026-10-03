@@ -22,3 +22,6 @@ translation/*.xlsx
 # Python
 __pycache__/
 *.pyc
+
+# 글꼴 원본 (OFL/개별 라이선스, 용량이 커서 저장소에 넣지 않는다)
+tools/fonts/
