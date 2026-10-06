@@ -21,8 +21,8 @@
 
 ### 적용 방법
 
-1. [배포 페이지](https://github.com/arqhive/zelda-four-swords-anniversary-edition-kor-patch/releases/tag/v1.2f)에서 `Zelda_4Swords_AE_Korean_Patch_v1.2f.zip`을 받습니다.
-2. 북미판 원본에 `Zelda_4Swords_AE_KQ9E_Korean_v1.2f.bps`를 적용합니다. 확장자가 `.app`이면 결과 파일을 `.nds`로 바꿉니다.
+1. [배포 페이지](https://github.com/arqhive/zelda-four-swords-anniversary-edition-kor-patch/releases/tag/v1.2f)에서 `KQ9E_KPatch_v1.2f.zip`을 받습니다.
+2. 북미판 원본에 `KQ9E_KPatch_v1.2f.bps`를 적용합니다. 확장자가 `.app`이면 결과 파일을 `.nds`로 바꿉니다.
 3. 결과 파일의 확인값을 아래 표와 비교합니다.
 4. 3DS나 DSi에서는 TWiLight Menu++로 실행합니다. 한글은 영어 대사 자리에 들어 있으므로 TWiLight Menu++의 게임 언어를 English로 설정합니다.
 5. melonDS에서는 DSi 모드(Full BIOS Boot 끔)로 에뮬레이터 NAND에 Unlaunch를 설치하고, Manage DSi titles에서 패치한 롬과 원본 덤프의 TMD를 Import한 뒤 Boot firmware 중 A+B를 눌러 Unlaunch 메뉴에서 실행합니다. 롬을 직접 열거나 TWiLight Menu++로 실행하면 흰 화면에서 멈춥니다.
