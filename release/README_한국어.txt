@@ -4,7 +4,7 @@
 ==============================================================
 
 제작: arqhive
-배포 파일: Zelda_4Swords_AE_KQ9E_Korean_v1.2f.bps
+배포 파일: KQ9E_KPatch_v1.2f.bps
 
 
 ■ 소개
@@ -54,7 +54,7 @@
 [Rom Patcher JS]
   1. 사이트 접속
   2. "ROM file"에 원본 파일 선택
-  3. "Patch file"에 Zelda_4Swords_AE_KQ9E_Korean_v1.2f.bps 선택
+  3. "Patch file"에 KQ9E_KPatch_v1.2f.bps 선택
   4. "Apply patch" 클릭 → 패치된 파일 저장
 
 [Floating IPS]
