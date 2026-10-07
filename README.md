@@ -3,7 +3,7 @@
 *The Legend of Zelda: Four Swords Anniversary Edition* (DSiWare, 북미판 `KQ9E`) 비공식 한국어 팬 패치입니다.
 대사는 일본어판 원문을 기준으로 번역했습니다.
 
-**제작: arqhive** · **최신 버전: [v1.2f](https://github.com/arqhive/zelda-four-swords-anniversary-edition-kor-patch/releases/tag/v1.2f)** (최종판)
+**제작: arqhive** · **최신 버전: [v1.2f](https://github.com/arqhive/zelda-four-swords-anniversary-edition-kor-patch/releases/tag/v1.2f)** (완성판)
 
 - 대사·안내문·시스템 메시지를 한글화했습니다(220개 항목 중 스태프 롤을 뺀 215개).
 - 게임 폰트에 한글 글리프를 추가했습니다.
